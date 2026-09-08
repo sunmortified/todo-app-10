@@ -1,6 +1,5 @@
 import React from 'react';
-import TodoForm from './components/TodoForm';
-import TodoList from './components/TodoList';
+import TodoStateOnlyApp from './components/TodoStateOnlyApp';
 import { getTodos } from '@/lib/todos';
 
 export default async function TodoPage() {
@@ -8,18 +7,14 @@ export default async function TodoPage() {
 
   return (
     <main className="min-h-screen p-8 bg-gray-100">
-      <div className="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-lg border border-gray-100">
-        <header className="mb-8 border-b pb-4">
-          <h1 className="text-3xl font-bold text-gray-800 text-center">
+      <div className="max-w-xl mx-auto bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+        <header className="mb-6 border-b pb-4">
+          <h1 className="text-2xl font-bold text-gray-800 text-center">
             Daftar Tugas (Todo List)
           </h1>
         </header>
 
-        {/* Form Komponen */}
-        <TodoForm />
-
-        {/* List Komponen yang membungkus Item */}
-        <TodoList todos={todos} />
+        <TodoStateOnlyApp initialTodos={todos} />
       </div>
     </main>
   );
