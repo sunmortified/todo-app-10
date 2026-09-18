@@ -1,0 +1,8 @@
+$kind: http-request
+url: http://localhost:5000/api/todos/20
+method: GET
+auth:
+  type: bearer
+  credentials:
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNzg5NzI4MTMxLCJleHAiOjE3ODk3MzUzMzF9.QpA_wOj4I89TOgHK-AGtXoJOoU9CVXo7x4BIupFXV6w
+order: 4441103038152906

@@ -1,0 +1,34 @@
+$kind: http-request
+name: login
+url: http://localhost:5000/api/auth/login
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"username\": \"naura\",\r
+
+    \    \"password\": \"password123\"\r
+
+    }"
+scripts:
+  - type: afterResponse
+    code: "// Mengambil response berformat JSON\r
+
+      const response = pm.response.json();\r
+
+      \r
+
+      // Mengecek apakah login sukses dan token tersedia\r
+
+      if (response.success && response.token) {\r
+
+      \    // Menyimpan token ke dalam variable global Postman bernama 'jwt_token'\r
+
+      \    pm.globals.set(\"jwt_token\", response.token);\r
+
+      \    console.log(\"Token berhasil disimpan otomatis!\");\r
+
+      }"
+    language: text/javascript
+order: 3913871087573756
